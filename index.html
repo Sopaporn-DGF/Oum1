@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>AR Cute Cats - Hiro Marker</title>
+
+  <!-- A-Frame + AR.js -->
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js@3.4.5/aframe/build/aframe-ar.js"></script>
+
+  <style>
+    body { margin: 0; overflow: hidden; font-family: Arial, sans-serif; }
+    #hint {
+      position: fixed; z-index: 10; top: 12px; left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,.58); color: white;
+      padding: 10px 16px; border-radius: 20px; text-align: center;
+      pointer-events: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="hint">ส่องกล้องไปที่ Hiro Marker 🐱 แมวทั้ง 4 ตัวจะกระโดด!</div>
+
+  <a-scene
+    embedded
+    vr-mode-ui="enabled: false"
+    renderer="logarithmicDepthBuffer: true; antialias: true;"
+    arjs="sourceType: webcam; debugUIEnabled: false;"
+  >
+    <!-- Hiro Marker -->
+    <a-marker preset="hiro">
+
+      <!-- CAT 1 : ชมพู -->
+      <a-entity position="-1.05 0 0" animation="property: position; from: -1.05 0 0; to: -1.05 0.55 0; dur: 650; dir: alternate; loop: true; easing: easeInOutQuad;">
+        <a-sphere position="0 0.65 0" radius="0.28" color="#FFD0DC"></a-sphere>
+        <a-sphere position="0 0.22 0" radius="0.38" scale="1 1.15 .8" color="#FFD0DC"></a-sphere>
+        <a-cone position="-0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#FFD0DC"></a-cone>
+        <a-cone position="0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#FFD0DC"></a-cone>
+        <a-sphere position="-0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0 0.61 -0.27" radius="0.03" color="#E9859E"></a-sphere>
+        <a-torus position="0.36 0.28 0.05" radius="0.23" radius-tubular="0.045"
+                 rotation="0 80 0" color="#FFD0DC"></a-torus>
+      </a-entity>
+
+      <!-- CAT 2 : ส้ม -->
+      <a-entity position="-0.35 0 0" animation="property: position; from: -0.35 0 0; to: -0.35 0.48 0; dur: 720; dir: alternate; loop: true; easing: easeInOutQuad;">
+        <a-sphere position="0 0.65 0" radius="0.28" color="#FFB45C"></a-sphere>
+        <a-sphere position="0 0.22 0" radius="0.38" scale="1 1.15 .8" color="#FFB45C"></a-sphere>
+        <a-cone position="-0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#FFB45C"></a-cone>
+        <a-cone position="0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#FFB45C"></a-cone>
+        <a-sphere position="-0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0 0.61 -0.27" radius="0.03" color="#B85D4C"></a-sphere>
+        <a-torus position="0.36 0.28 0.05" radius="0.23" radius-tubular="0.045"
+                 rotation="0 80 0" color="#FFB45C"></a-torus>
+      </a-entity>
+
+      <!-- CAT 3 : เทา -->
+      <a-entity position="0.35 0 0" animation="property: position; from: 0.35 0 0; to: 0.35 0.60 0; dur: 600; dir: alternate; loop: true; easing: easeInOutQuad;">
+        <a-sphere position="0 0.65 0" radius="0.28" color="#AEB8C4"></a-sphere>
+        <a-sphere position="0 0.22 0" radius="0.38" scale="1 1.15 .8" color="#AEB8C4"></a-sphere>
+        <a-cone position="-0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#AEB8C4"></a-cone>
+        <a-cone position="0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#AEB8C4"></a-cone>
+        <a-sphere position="-0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0 0.61 -0.27" radius="0.03" color="#E78C9A"></a-sphere>
+        <a-torus position="0.36 0.28 0.05" radius="0.23" radius-tubular="0.045"
+                 rotation="0 80 0" color="#AEB8C4"></a-torus>
+      </a-entity>
+
+      <!-- CAT 4 : ขาว -->
+      <a-entity position="1.05 0 0" animation="property: position; from: 1.05 0 0; to: 1.05 0.52 0; dur: 780; dir: alternate; loop: true; easing: easeInOutQuad;">
+        <a-sphere position="0 0.65 0" radius="0.28" color="#FFF7E8"></a-sphere>
+        <a-sphere position="0 0.22 0" radius="0.38" scale="1 1.15 .8" color="#FFF7E8"></a-sphere>
+        <a-cone position="-0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#FFF7E8"></a-cone>
+        <a-cone position="0.18 0.91 0" radius-bottom="0.15" radius-top="0" height="0.30" color="#FFF7E8"></a-cone>
+        <a-sphere position="-0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0.10 0.70 -0.255" radius="0.035" color="#222"></a-sphere>
+        <a-sphere position="0 0.61 -0.27" radius="0.03" color="#E78C9A"></a-sphere>
+        <a-torus position="0.36 0.28 0.05" radius="0.23" radius-tubular="0.045"
+                 rotation="0 80 0" color="#FFF7E8"></a-torus>
+      </a-entity>
+
+      <!-- พื้นรอง -->
+      <a-plane position="0 -0.18 0" rotation="-90 0 0" width="3.4" height="1.5"
+               color="#DDF3FF" opacity="0.45"></a-plane>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
